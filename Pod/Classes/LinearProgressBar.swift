@@ -15,6 +15,8 @@ private var screenSize: CGRect {
 }
 
 private let bar: LinearProgressBar = LinearProgressBar()
+private var sDuration: NSTimeInterval = 0.5
+private var dDuration: NSTimeInterval = 0.5
 
 public class LinearProgressBar: UIView {
 	
@@ -48,6 +50,18 @@ public class LinearProgressBar: UIView {
 	
 	/// The progress bar animation duration
 	public var keyframeDuration: NSTimeInterval = 1.0
+	
+	/// Default Show Duration
+	public var showDuration: TimeInterval {
+		get {return sDuration}
+		set {sDuration = newValue}
+	}
+	
+	/// Default Dismiss Duration
+	public var dismissDuration: TimeInterval {
+		get {return dDuration}
+		set {dDuration = newValue}
+	}
 	
 	
 	// MARK: Deprecated
@@ -105,7 +119,7 @@ public class LinearProgressBar: UIView {
 	- duration: The animation duration for showing the view. Defaults to `0.5`
 	- delay: The delay for showing the view. Defaults to `0.0`
 	*/
-	public func show(duration duration: NSTimeInterval = 0.5, delay: NSTimeInterval = 0) {
+	public func show(duration duration: NSTimeInterval = sDuration, delay: NSTimeInterval = 0) {
 		
 		self.display()
 		
@@ -130,7 +144,7 @@ public class LinearProgressBar: UIView {
 	- progress: The progress of the task. Should be a value between `0.0` & `1.0`
 	- duration: The animation duration for showing the view. Defaults to `0.5`
 	*/
-	public func showProgress(progress: CGFloat, duration: NSTimeInterval = 0.5) {
+	public func showProgress(progress: CGFloat, duration: NSTimeInterval = sDuration) {
 		
 		self.display()
 		
@@ -161,7 +175,7 @@ public class LinearProgressBar: UIView {
 	- parameters:
 	- duration: The animation duration for dismissing the view. Defaults to `0.5`
 	*/
-	public func dismiss(duration duration: NSTimeInterval = 0.5) {
+	public func dismiss(duration duration: NSTimeInterval = dDuration) {
 		
 		self.isAnimationRunning = false
 		
