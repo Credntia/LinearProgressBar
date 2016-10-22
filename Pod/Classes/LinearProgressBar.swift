@@ -14,10 +14,7 @@ fileprivate var screenSize: CGRect {
 	return UIScreen.main.bounds
 }
 
-private var bar: LinearProgressBar = {
-	var bar = LinearProgressBar()
-	return bar
-}()
+private let bar: LinearProgressBar = LinearProgressBar()
 
 open class LinearProgressBar: UIView {
 	
