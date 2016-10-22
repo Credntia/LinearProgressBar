@@ -52,13 +52,13 @@ public class LinearProgressBar: UIView {
 	public var keyframeDuration: NSTimeInterval = 1.0
 	
 	/// Default Show Duration
-	public var showDuration: TimeInterval {
+	public var showDuration: NSTimeInterval {
 		get {return sDuration}
 		set {sDuration = newValue}
 	}
 	
 	/// Default Dismiss Duration
-	public var dismissDuration: TimeInterval {
+	public var dismissDuration: NSTimeInterval {
 		get {return dDuration}
 		set {dDuration = newValue}
 	}
