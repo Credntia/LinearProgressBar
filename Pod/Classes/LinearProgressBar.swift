@@ -14,10 +14,7 @@ private var screenSize: CGRect {
 	return UIScreen.mainScreen().bounds
 }
 
-private var bar: LinearProgressBar = {
-	var bar = LinearProgressBar()
-	return bar
-}()
+private let bar: LinearProgressBar = LinearProgressBar()
 
 public class LinearProgressBar: UIView {
 	
@@ -67,7 +64,11 @@ public class LinearProgressBar: UIView {
 	
 	// MARK: Inits
 	
-	public convenience init(height: CGFloat = 5) {
+	public convenience init() {
+		self.init(height: 5)
+	}
+	
+	public convenience init(height: CGFloat) {
 		self.init(frame: CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: screenSize.width, height: height)))
 	}
 	
