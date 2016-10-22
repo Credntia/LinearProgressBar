@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 	
+	@IBAction func back(sender: AnyObject) {
+		self.dismissViewControllerAnimated(true, completion: nil)
+	}
+	
 	@IBAction func advanceProgress(sender: AnyObject) {
 		currentProgress += 0.25
 		if currentProgress > 1 {

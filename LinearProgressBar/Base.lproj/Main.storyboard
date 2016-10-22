@@ -7,6 +7,88 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="HOa-MV-FJ2">
+            <objects>
+                <viewController id="hTw-O4-q2F" customClass="ViewController" customModule="LinearProgressBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A3j-9x-N8f"/>
+                        <viewControllerLayoutGuide type="bottom" id="xlA-4c-rc7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kQ7-mU-dXE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5y-Vz-2q8">
+                                <color key="backgroundColor" red="0.0" green="0.3309842429" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="o1a-CW-8Bp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAnimation:" destination="hTw-O4-q2F" eventType="touchUpInside" id="vSI-Ae-8qg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-cy-vxf">
+                                <color key="backgroundColor" red="0.0" green="0.48145251500000003" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dms-gf-Bdx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Show">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAnimation:" destination="hTw-O4-q2F" eventType="touchUpInside" id="qIB-Xr-Tjz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dto-Sf-CDu">
+                                <color key="backgroundColor" red="0.0" green="0.55761772389999997" blue="0.62067708330000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HGs-mM-Gv6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Advance Progress">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="advanceProgress:" destination="hTw-O4-q2F" eventType="touchUpInside" id="Cbr-BF-vaA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SS5-ko-CAY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0jb-NI-SSP"/>
+                                    <constraint firstAttribute="width" constant="60" id="Yq5-hc-IwL"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="hTw-O4-q2F" eventType="touchUpInside" id="xG5-Fc-sqM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eCS-cy-vxf" secondAttribute="trailing" id="5rJ-eh-kuy"/>
+                            <constraint firstAttribute="trailing" secondItem="SS5-ko-CAY" secondAttribute="trailing" constant="16" id="6MK-C2-1YZ"/>
+                            <constraint firstItem="xlA-4c-rc7" firstAttribute="top" secondItem="I5y-Vz-2q8" secondAttribute="bottom" id="GB0-Kx-h9W"/>
+                            <constraint firstItem="Dto-Sf-CDu" firstAttribute="leading" secondItem="kQ7-mU-dXE" secondAttribute="leading" id="TZL-7I-jfu"/>
+                            <constraint firstItem="eCS-cy-vxf" firstAttribute="top" secondItem="Dto-Sf-CDu" secondAttribute="bottom" id="Tve-Pa-HxH"/>
+                            <constraint firstItem="SS5-ko-CAY" firstAttribute="top" secondItem="A3j-9x-N8f" secondAttribute="bottom" constant="8" id="es2-fJ-HQv"/>
+                            <constraint firstAttribute="trailing" secondItem="I5y-Vz-2q8" secondAttribute="trailing" id="hZf-GQ-rhU"/>
+                            <constraint firstItem="I5y-Vz-2q8" firstAttribute="leading" secondItem="kQ7-mU-dXE" secondAttribute="leading" id="mEX-HW-IFO"/>
+                            <constraint firstAttribute="trailing" secondItem="Dto-Sf-CDu" secondAttribute="trailing" id="mr1-YS-18m"/>
+                            <constraint firstItem="I5y-Vz-2q8" firstAttribute="top" secondItem="eCS-cy-vxf" secondAttribute="bottom" id="toi-dY-sCW"/>
+                            <constraint firstItem="eCS-cy-vxf" firstAttribute="leading" secondItem="kQ7-mU-dXE" secondAttribute="leading" id="wYv-GC-GZG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdQ-Vy-OYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="239"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="2qP-lq-PZ5">
             <objects>
                 <viewController id="6zn-ZP-uD2" customClass="ViewController" customModule="LinearProgressBar" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,10 +139,22 @@
                                     <action selector="advanceProgress:" destination="6zn-ZP-uD2" eventType="touchUpInside" id="Ap3-Pp-kCj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88g-Hx-ykz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XD4-Jc-wUU"/>
+                                    <constraint firstAttribute="height" constant="60" id="pzx-x9-v7k"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="hTw-O4-q2F" kind="presentation" id="p4N-bM-Kco"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="88g-Hx-ykz" secondAttribute="trailing" constant="20" id="1QD-a9-QfS"/>
                             <constraint firstAttribute="trailing" secondItem="MfI-ao-qL5" secondAttribute="trailing" id="4tA-rF-F8e"/>
+                            <constraint firstItem="88g-Hx-ykz" firstAttribute="top" secondItem="fS0-cp-Is5" secondAttribute="bottom" constant="8" id="7Dx-za-GgJ"/>
                             <constraint firstItem="MfI-ao-qL5" firstAttribute="top" secondItem="F5v-ZQ-bEK" secondAttribute="bottom" id="7jM-3G-Cq9"/>
                             <constraint firstItem="HPV-qt-sJQ" firstAttribute="top" secondItem="YHr-KY-UkW" secondAttribute="bottom" id="Tlq-F4-7p9"/>
                             <constraint firstItem="YHr-KY-UkW" firstAttribute="leading" secondItem="2MK-bg-cfg" secondAttribute="leading" id="b9u-pG-CFf"/>
@@ -74,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0s-a0-BUm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="239"/>
+            <point key="canvasLocation" x="-372" y="238.83058470764618"/>
         </scene>
     </scenes>
 </document>
