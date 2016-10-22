@@ -14,7 +14,21 @@ fileprivate var screenSize: CGRect {
 	return UIScreen.main.bounds
 }
 
+private var bar: LinearProgressBar = {
+	var bar = LinearProgressBar(frame: CGRect(x: 10, y: UIScreen.main.bounds.height - 200, width: UIScreen.main.bounds.width - 20, height: 5))
+	bar.backgroundColor = UIColor(red:0.68, green:0.81, blue:0.72, alpha:1.0)
+	bar.progressBarColor = UIColor(red:0.26, green:0.65, blue:0.45, alpha:1.0)
+	bar.widthRatioOffset = 0.78
+	bar.xOffset = 15
+	bar.keyframeDuration = 1.2
+	return bar
+}()
+
 open class LinearProgressBar: UIView {
+	
+	class var shared: LinearProgressBar {
+		return bar
+	}
 	
 	// MARK: - Private Variables
 	
@@ -28,6 +42,7 @@ open class LinearProgressBar: UIView {
 	
 	// MARK: Public Variables
 	
+	/// The height for the progress bar
 	open var progressBarHeight: CGFloat
 	
 	/// Background color for the progress bar
@@ -161,6 +176,9 @@ open class LinearProgressBar: UIView {
 			self.frame = rect
 		}) { (finished: Bool) in
 			self.progressBarIndicator.removeFromSuperview()
+			if self == bar {
+				self.removeFromSuperview()
+			}
 		}
 	}
 	
@@ -171,7 +189,7 @@ open class LinearProgressBar: UIView {
 		self.progressBarIndicator.backgroundColor = self.progressBarColor
 		self.layoutIfNeeded()
 		
-		guard self.superview == nil, let view = UIApplication.shared.keyWindow?.visibleViewController?.view else {return}
+		guard (self.superview == nil || self == bar), let view = UIApplication.shared.keyWindow?.visibleViewController?.view else {return}
 		view.addSubview(self)
 	}
 	

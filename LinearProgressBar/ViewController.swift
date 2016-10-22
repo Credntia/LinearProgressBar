@@ -34,21 +34,25 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 	
+	@IBAction func back(_ sender: AnyObject) {
+		dismiss(animated: true, completion: nil)
+	}
+	
 	@IBAction func advanceProgress(_ sender: AnyObject) {
 		currentProgress += 0.25
 		if currentProgress > 1 {
 			currentProgress = 0
 		}
 		
-		self.linearBar.showProgress(currentProgress, duration: 0.3)
+		linearBar.showProgress(currentProgress, duration: 0.3)
 	}
 
     @IBAction func startAnimation(_ sender: AnyObject) {
-		self.linearBar.show(duration: 0.3, delay: 0.0)
+		linearBar.show(duration: 0.3, delay: 0.0)
     }
     
     @IBAction func stopAnimation(_ sender: AnyObject) {
-        self.linearBar.dismiss(duration: 0.3)
+        linearBar.dismiss(duration: 0.3)
     }
 }
 
