@@ -14,16 +14,10 @@ fileprivate var screenSize: CGRect {
 	return UIScreen.main.bounds
 }
 
-private let bar: LinearProgressBar = LinearProgressBar()
-
 private var sDuration: TimeInterval = 0.5
 private var dDuration: TimeInterval = 0.5
 
 open class LinearProgressBar: UIView {
-	
-	public class var shared: LinearProgressBar {
-		return bar
-	}
 	
 	// MARK: - Private Variables
 	
@@ -185,9 +179,6 @@ open class LinearProgressBar: UIView {
 			self.containerView.frame = rect
 		}) { (finished: Bool) in
 			self.progressView.removeFromSuperview()
-			if self == bar {
-				self.removeFromSuperview()
-			}
 		}
 	}
 	
@@ -198,7 +189,7 @@ open class LinearProgressBar: UIView {
 		self.progressView.backgroundColor = self.progressBarColor
 		self.layoutIfNeeded()
 		
-		guard (self.superview == nil || self == bar), let view = UIApplication.shared.keyWindow?.visibleViewController?.view else {return}
+		guard self.superview == nil, let view = UIApplication.shared.keyWindow?.visibleViewController?.view else {return}
 		view.addSubview(self)
 	}
 	
