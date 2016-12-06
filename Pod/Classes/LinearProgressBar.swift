@@ -113,12 +113,19 @@ open class LinearProgressBar: UIView {
 	
 	/**
 	Shows the view, if not currently shown, then starts the animation
+	*/
+	open func show() {
+		show(duration: sDuration, delay: 0)
+	}
+	
+	/**
+	Shows the view, if not currently shown, then starts the animation
 	
 	- parameters:
-		- duration: The animation duration for showing the view. Defaults to `0.5`
-		- delay: The delay for showing the view. Defaults to `0.0`
+		- duration: The animation duration for showing the view.
+		- delay: The delay for showing the view.
 	*/
-	open func show(duration: TimeInterval = sDuration, delay: TimeInterval = 0) {
+	open func show(duration: TimeInterval, delay: TimeInterval) {
 		
 		self.display()
 		
@@ -138,9 +145,19 @@ open class LinearProgressBar: UIView {
 	
 	- parameters:
 		- progress: The progress of the task. Should be a value between `0.0` & `1.0`
-		- duration: The animation duration for showing the view. Defaults to `0.5`
 	*/
-	open func showProgress(_ progress: CGFloat, duration: TimeInterval = sDuration) {
+	open func showProgress(_ progress: CGFloat) {
+		showProgress(progress, duration: sDuration)
+	}
+	
+	/**
+	Shows the view, if not currently shown, then displays a specific progress value. This is useful for displaying progress of a task.
+	
+	- parameters:
+		- progress: The progress of the task. Should be a value between `0.0` & `1.0`
+		- duration: The animation duration for showing the view.
+	*/
+	open func showProgress(_ progress: CGFloat, duration: TimeInterval) {
 		
 		self.display()
 		
@@ -164,11 +181,18 @@ open class LinearProgressBar: UIView {
 	
 	/**
 	Dismisses the view, if currently shown.
+	*/
+	open func dismiss() {
+		dismiss(duration: dDuration)
+	}
+	
+	/**
+	Dismisses the view, if currently shown.
 	
 	- parameters:
-		- duration: The animation duration for dismissing the view. Defaults to `0.5`
+		- duration: The animation duration for dismissing the view.
 	*/
-	open func dismiss(duration: TimeInterval = dDuration) {
+	open func dismiss(duration: TimeInterval) {
 		
 		self.isAnimationRunning = false
 		
