@@ -171,7 +171,7 @@ open class LinearProgressBar: UIView {
 		self.progressBarIndicator.backgroundColor = self.progressBarColor
 		self.layoutIfNeeded()
 		
-		guard self.superview == nil, let view = UIApplication.shared.keyWindow?.visibleViewController?.view else {return}
+		guard self.superview == nil, let view = UIApplication.shared.keyWindow else {return}
 		view.addSubview(self)
 	}
 	
